@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Mulish&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+// font famaily
+$font1: 'Viga', sans-serif;
+$font2: 'Pacifico', cursive;
+$font3: 'Josefin Sans', sans-serif;
+$font4: 'Fira Code', monospace;
+
+// best for heading
+.font1 {
+    font-family: $font1 !important;
+}
+
+// best for iner text
+.font2 {
+    font-family: $font2 !important;
+}
+
+// best for small heading
+.font3 {
+    font-family: $font3 !important;
+}
+
+//fontsize
+
+.fs-7 {
+    font-size: 14px !important;
+}
+
+.fs-big {
+    font-size: 5rem !important;
+}
+
+
+// colors
+
+$white: rgb(255, 255, 255);
+
+.white {
+    color: $white !important;
+}
+
+.bg-white {
+    background-color: $white;
+}
+
+$tomato: tomato;
+
+.tomato {
+    color: $tomato !important;
+}
+
+.bg-tomato {
+    background-color: $tomato !important;
+    color: $white !important;
+}
+
+.green {
+    color: green !important;
+}
+
+.red {
+    color: red !important;
+}
+.bg-super {
+    background-color: #c6c6c6 !important;
+}
+
+
+
+$carousel-caption-color: $tomato;
+
+//buttons
+.btn-outline-tomato {
+    color: $tomato !important;
+    background-color: transparent !important;
+    border: 1.5px solid $tomato !important;
+    padding: 5px 8px !important;
+    padding-left: 2rem !important;
+    transition: all 0.5s !important;
+}
+
+
+
+//height
+
+.h-40 {
+    height: 40px !important;
+}
+
+// mouse
+.pointer {
+    cursor: pointer !important;
+}
+
+
+//padding
+.px-6 {
+    padding: 0 5rem !important;
+}
+
+//width
+
+.w-90 {
+    width: 90% !important;
+}
+
+//border
+
+.border-tomato {
+    border: 1px solid $tomato !important;
+}
+
+.obj-fit {
+    object-fit: cover !important;
+}
