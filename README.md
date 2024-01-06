@@ -14,7 +14,7 @@ Install Dependencies
 
 For Backend - npm i
 
-For Frontend - cd frontend  npm i
+For Frontend - cd frontend  npm i --legacy-peer-deps
 
 Env Variables
 Make Sure to Create a config.env file in backend/config directory and add appropriate variables in order to use the app.
