@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
 
         <div className='col-md-3 col-12 my-auto py-4'>
-            <h5 className='white text-center'> Follo us </h5> 
+            <h5 className='white text-center'> Follow us </h5> 
             <p className='white text-center'><Link className='text-decoration-none white' to="https://www.instagram.com/hiren_hadiya_509/"> <i class="fa-brands fa-instagram"></i></Link></p>
             <p className='white text-center'><Link className='text-decoration-none white' to="https://github.com/Kingmaker509/Kingmaker509"> <i class="fa-brands fa-github"></i></Link></p>
             <p className='white text-center'><Link className='text-decoration-none white' to="https://www.linkedin.com/in/hiren-hadiya-6a483a2a2/"> <i class="fa-brands fa-linkedin"></i></Link></p>

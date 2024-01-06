@@ -29,6 +29,7 @@ function Home() {
 
 
 
+  
 
   return (
     <>
@@ -78,7 +79,7 @@ function Home() {
             </div>
           </div>
 
-          <img src="https://www.turnersjewelers.com/wp-content/uploads/2020/06/rolex-banner.jpg" className='img-fluid my-4' alt="postar 1" />
+
 
 
         </>

@@ -36,7 +36,8 @@ const Updateproduct = () => {
         "women",
         "phone",
         "footwere",
-        "camera"
+        "camera",
+        "watch"
     ];
 
 

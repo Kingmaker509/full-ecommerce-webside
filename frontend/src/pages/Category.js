@@ -20,7 +20,8 @@ const categorys = [
   "women",
   "phone",
   "footwere",
-  "camera"
+  "camera",
+  "watch"
 ];
 
 

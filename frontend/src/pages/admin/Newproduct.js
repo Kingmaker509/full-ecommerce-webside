@@ -30,7 +30,8 @@ const Newproduct = () => {
         "women",
         "phone",
         "footwere",
-        "camera"
+        "camera",
+        "watch"
     ];
 
 
@@ -80,7 +81,7 @@ const Newproduct = () => {
         if (success) {
             alert.success("Product created successfully")
             dispatch({ type: NEW_PRODUCT_RESET });
-            navigate("/admin/dashboard");
+            navigate("/admin/dashbord");
         }
     }, [dispatch, alert, error, navigate, success]); 
 

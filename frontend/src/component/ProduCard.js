@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
 
     return (
         <>
-            <div className="col-md-4 col-sm-6 my-3">
+            <div className="col-md-4 col-sm-6 col-10 mx-auto my-3">
                 <Link className='text-decoration-none' to={`/product/${product._id}`}>
                     <div className="card shadow">
                         <img src={product.images[0].url} className="pimg obj-fit" alt="blue tshart" />
