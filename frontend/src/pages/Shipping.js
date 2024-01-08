@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { Country, State } from 'country-state-city'
 import Footer from '../component/Footer';
 import MetaData from '../component/MetaData';
-import Checkoutorder from '../component/Checkoutorder';
 import { saveShippingInfo } from '../actions/cartActions';
 
 const Shipping = () => {
@@ -44,7 +43,6 @@ const Shipping = () => {
                     <MetaData title="Shipping details -- Hadiya-mart" />
 
                     <div className='container-fluid py-5 bg-super'>
-                        <Checkoutorder />
                         <div className='container'>
                             <h3 className='text-center font3 reviews-hd p-2 my-4 mx-auto w-25'>Shipping</h3>
                             <div className="row">

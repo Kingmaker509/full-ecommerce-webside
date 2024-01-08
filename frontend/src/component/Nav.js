@@ -26,7 +26,7 @@ const Nav = () => {
                                 <Link className="nav-link active white list-a" aria-current="page" to={isAuthenticated ? "/account" : "/login"}>{isAuthenticated ? "Account" : "Login"}</Link>
                             </li>
                             <li className="nav-item ">
-                                <Link className="nav-link active white pt-3" aria-current="page" to={isAuthenticated ? "/cart" : "/"}>{isAuthenticated ? <i className="fas fa-shopping-cart"></i> : " "}</Link>
+                                <Link className="nav-link active white pt-3 ps-4" aria-current="page" to={isAuthenticated ? "/cart" : "/"}>{isAuthenticated ? <i className="fas fa-shopping-cart"></i> : " "}</Link>
                             </li>
                             <li className="nav-item ">
                                 <Link className="nav-link active white pt-2 ps-4" aria-current="page" to={isAuthenticated ? "/account" : "/login"}>{isAuthenticated ? <img src={user.avatar.url} className='img-fluid profile1' alt="peofile" /> : <img src="/photo.png" className='img-fluid profile1' alt="peofile" />}</Link>

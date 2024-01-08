@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../component/Loader';
 import MetaData from '../component/MetaData';
-import CheckoutOrder from '../component/Checkoutorder';
 import Footer from '../component/Footer';
 import Cartitams from '../component/Cartitams';
 import {  createOrder } from '../actions/orderAction';
@@ -76,8 +75,6 @@ const Orderconfirm = () => {
                 {isAuthenticated ? <>
                     <div className='container-fuld bg-super'>
                         <MetaData title="Confirm order -- Hadiya-mart" />
-
-                        <CheckoutOrder />
                         <div className='container'>
                             <div className="row py-5 g-3">
                                 <div className="col-lg-8 text-center text-md-start">

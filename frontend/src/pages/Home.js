@@ -8,6 +8,9 @@ import Loader from '../component/Loader';
 import { useAlert } from 'react-alert'
 import Search from '../component/Search';
 import { Link } from 'react-router-dom';
+import img1 from '../imges/main-qimg-0d62e77a01f8b25ec13cae26011ded5b.png'
+import img2 from '../imges/winter-edit-banner3.jpg'
+import img3 from '../imges/ecommerce-1024x536.jpg'
 
 
 
@@ -47,16 +50,16 @@ function Home() {
           </div>
 
 
-          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+          <div id="carouselExampleControls" class="carousel slide py-4" data-bs-ride="carousel">
+            <div class="carousel-inner text-center">
               <div class="carousel-item active">
-                <div class="d-block imag1" />
+                <img src={img1} alt="img" className='img-fluid carousel-img' />
               </div>
               <div class="carousel-item">
-                <div class="d-block imag2" />
+                <img src={img2} alt="img" className='img-fluid carousel-img' />
               </div>
               <div class="carousel-item">
-                <div class="d-block imag3" />
+                <img src={img3} alt="img" className='img-fluid carousel-img' />
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

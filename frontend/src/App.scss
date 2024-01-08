@@ -66,52 +66,11 @@
 .main-background {
   width: 80% !important;
   height: auto !important;
-  filter: brightness(0.7);
+  filter: brightness(0.8);
 }
 
-.imag1 {
-  background-image: url(imges/main-qimg-0d62e77a01f8b25ec13cae26011ded5b.png) !important;
-  width: 100% !important;
-  height: 600px !important;
-  background-size: 100% !important;
-  margin-top: 3rem;
-  background-repeat: no-repeat;
-}
-
-.imag2 {
-  background-image: url(imges/winter-edit-banner3.jpg) !important;
-  width: 100% !important;
-  height: 600px !important;
-  background-size: 100% !important;
-  margin-top: 3rem;
-  background-repeat: no-repeat;
-}
-
-.imag3 {
-  background-image: url(imges/ecommerce-1024x536.jpg) !important;
-  width: 100% !important;
-  height: 600px !important;
-  background-size: 100% !important;
-  margin-top: 3rem;
-  background-repeat: no-repeat;
-}
-
-@media (max-width: 992px) {
-  .main-background {
-    height: 530px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .main-background {
-    height: 400px !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .main-background {
-    height: 280px !important;
-  }
+.carousel-img{
+  width: 80% !important;
 }
 
 //product card

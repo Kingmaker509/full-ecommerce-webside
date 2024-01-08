@@ -56,17 +56,18 @@ const Account = () => {
                     <p className='fs-7 font3 text-secondary'>#{user._id}</p>
                     <h5 className='font1'>{user.email}</h5>
                     <div className="row">
-                      <div className='col-4'><button className='btn-outline-tomato text-center py-2 bg-white px-4  w-90 font1' onClick={() => logoutUser()}><i className="fas fa-sign-out-alt"></i> logout</button></div>
+                        <div className='col-12 text-center text-md-start'><button className='btn-outline-tomato text-center py-2 bg-white px-4 font1' onClick={() => logoutUser()}><i className="fas fa-sign-out-alt"></i> logout</button></div>
                     </div>
                   </div>
+                  <hr />
                   <div className="col-12">
                     {user.role === "admin" ? <>
-                      <div className='col-4'><button className='btn-outline-tomato text-center py-2 ms-5 my-2 px-4  w-90 font1' onClick={() => admingo()}>Admin panal</button></div>
+                      <div className='col-12 text-center text-md-start'><button className='btn-outline-tomato text-center py-2 my-2 px-4 font1' onClick={() => admingo()}>Admin panal</button></div>
                     </> : ""}
                     {orders ? <>
-                      <div className='container mt-5 pt-5'>
+                      <div className='container'>
                         <div className="row">
-                          <h3 className='text-center font3 reviews-hd p-2 my-4 mx-auto w-25'>Orders</h3>
+                          <h3 className='text-center font3 reviews-hd p-2 mb-4 mx-auto w-25'>Orders</h3>
                           <div className="col-12">
                             <div className='container ob'>
                               <table className='table'>
