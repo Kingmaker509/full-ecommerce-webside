@@ -1,74 +1,80 @@
+// const catchAsyncErrors = require("../middleware/catchAsyncErrors");
+
+// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+// exports.processPayment = catchAsyncErrors(async (req, res, next) => {
+//     const myPayment = await stripe.paymentIntents.create({
+//         amount: req.body.amount,
+//         currency: "inr",
+//         metadata: {
+//             company: "Ecommerce",
+//         },
+//     });
+
+//     res
+//         .status(200)
+//         .json({ success: true, client_secret: myPayment.client_secret });
+// });
+
+// exports.sendStripeApiKey = catchAsyncErrors(async (req, res, next) => {
+//     res.status(200).json({ stripeApiKey: process.env.STRIPE_API_KEY });
+// });
+
+// const { instance } = require("../server.js");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
+const crypto = require("crypto");
+const { Payment } = require("../models/paymentModel.js");
+const Razorpay = require("razorpay");
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-exports.processPayment = catchAsyncErrors(async (req, res, next) => {
-    const myPayment = await stripe.paymentIntents.create({
-        amount: req.body.amount,
-        currency: "inr",
-        metadata: {
-            company: "Ecommerce",
-        },
+exports.checkout = catchAsyncErrors(async (req, res) => {
+    const instance = new Razorpay({
+        key_id: process.env.RAZORPAY_API_KEY,
+        key_secret: process.env.RAZORPAY_APT_SECRET,
     });
+    const rawAmount = req.body.amount;
 
-    res
-        .status(200)
-        .json({ success: true, client_secret: myPayment.client_secret });
+    const amountInPaise = Math.ceil(Number(rawAmount) * 100);
+    const options = {
+        amount: amountInPaise,
+        currency: "INR",
+    };
+
+    const order = await instance.orders.create(options);
+
+    res.status(200).json({
+        success: true,
+        order,
+    });
 });
 
-exports.sendStripeApiKey = catchAsyncErrors(async (req, res, next) => {
-    res.status(200).json({ stripeApiKey: process.env.STRIPE_API_KEY });
-});
+exports.paymentVerification = async (req, res) => {
+    const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
+        req.body;
 
+    const body = razorpay_order_id + "|" + razorpay_payment_id;
 
+    const expectedSignature = crypto
+        .createHmac("sha256", process.env.RAZORPAY_APT_SECRET)
+        .update(body)
+        .digest("hex");
+    const isAuthentic = expectedSignature === razorpay_signature;
 
+    if (isAuthentic) {
+        // Database operations go here
 
+        await Payment.create({
+            razorpay_order_id,
+            razorpay_payment_id,
+            razorpay_signature,
+        });
 
-// const https = require('https');
-// const PaytmChecksum = require('paytmchecksum'); // Assuming this utility is in the same directory
-
-// exports.initiateTransaction = async (req, res) => {
-//     try {
-//         const paytmParams = {
-//             // Build your paytmParams body here...
-//         };
-
-//         // Generate Checksum
-//         const checksum = await PaytmChecksum.generateSignature(JSON.stringify(paytmParams.body), "YOUR_MERCHANT_KEY");
-
-//         paytmParams.head = {
-//             "signature": checksum
-//         };
-
-//         const post_data = JSON.stringify(paytmParams);
-
-//         const options = {
-//             hostname: 'securegw-stage.paytm.in', // Replace with appropriate URL
-//             port: 443,
-//             path: '/theia/api/v1/initiateTransaction', // Replace with the endpoint
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Content-Length': post_data.length
-//             }
-//         };
-
-//         let response = "";
-//         const post_req = https.request(options, (post_res) => {
-//             post_res.on('data', (chunk) => {
-//                 response += chunk;
-//             });
-
-//             post_res.on('end', () => {
-//                 console.log('Response: ', response);
-//                 res.status(200).json({ response }); // Send the response back to the client
-//             });
-//         });
-
-//         post_req.write(post_data);
-//         post_req.end();
-//     } catch (error) {
-//         console.error('Error initiating transaction:', error);
-//         res.status(500).json({ error: 'Internal Server Error' });
-//     }
-// };
+        res.redirect(
+            `http://localhost:3000/paymentsuccess?reference=${razorpay_payment_id}`
+        );
+    } else {
+        res.status(400).json({
+            success: false,
+        });
+    }
+};

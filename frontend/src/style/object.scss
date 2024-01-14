@@ -80,7 +80,7 @@ $carousel-caption-color: $tomato;
     border: 1.5px solid $tomato !important;
     padding: 5px 8px !important;
     padding-left: 2rem !important;
-    transition: all 0.5s !important;
+    transition: all 0.5s ease-in-out !important;
 }
 
 

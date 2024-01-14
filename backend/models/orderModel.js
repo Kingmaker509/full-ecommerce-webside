@@ -20,14 +20,14 @@ const orderSchema = new mongoose.Schema({
             type: String,
             required: true,
         },
-        // pinCode: {
-        //     type: Number,
-        //     required: true,
-        // },
-        // phoneNo: {
-        //     type: Number,
-        //     required: true,
-        // },
+        pinCode: {
+            type: String,
+            required: true,
+        },
+        phoneNo: {
+            type: String,
+            required: true,
+        },
     },
     orderItems: [
         {

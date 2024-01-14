@@ -20,18 +20,18 @@ const Shipping = () => {
     const [city, setCity] = useState(shippingInfo.city);
     const [state, setState] = useState(shippingInfo.state);
     const [country, setcountry] = useState(shippingInfo.countey);
-    const [pincode, setPincode] = useState(shippingInfo.pincode);
-    const [phoneNO, setPhoneNo] = useState(shippingInfo.phoneNO);
+    const [pinCode, setPincode] = useState(shippingInfo.pinCode);
+    const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
 
 
     const ShippingSubmit = (e) => {
         e.preventDefault();
 
-        if (phoneNO.length !== 10) {
+        if (phoneNo.length !== 10) {
             alert.error("Phone number should be 10 digits");
         }
         dispatch(
-            saveShippingInfo({ address, city, state, country, pincode, phoneNO })
+            saveShippingInfo({ address, city, state, country, pinCode, phoneNo })
         );
         navigate("/order/confirm");
 
@@ -68,7 +68,7 @@ const Shipping = () => {
                                             <input type="number"
                                                 className='shipinput p-1 mx-4 my-2'
                                                 placeholder='Number...'
-                                                value={phoneNO}
+                                                value={phoneNo}
                                                 name='phoneno'
                                                 onChange={(e) => setPhoneNo(e.target.value)}
                                             />
@@ -76,7 +76,7 @@ const Shipping = () => {
                                             <input type="number"
                                                 className='shipinput p-1 mx-4 my-2'
                                                 placeholder='Pincode...'
-                                                value={pincode}
+                                                value={pinCode}
                                                 name='pincode'
                                                 onChange={(e) => setPincode(e.target.value)}
                                             />

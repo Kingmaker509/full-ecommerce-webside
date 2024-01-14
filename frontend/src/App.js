@@ -16,7 +16,6 @@ import Account from './pages/Account.js';
 import Cart from './pages/Cart.js';
 import Shipping from './pages/Shipping.js';
 import Orderconfirm from './pages/Orderconfirm.js';
-import PaymentPage from './pages/Payment.js';
 import Dashbord from './pages/admin/Dashbord.js';
 import Adminproduct from './pages/admin/Adminproduct.js';
 import Newproduct from './pages/admin/Newproduct.js';
@@ -24,6 +23,7 @@ import Updateproduct from './pages/admin/Updateproduct.js';
 import Adminorder from './pages/admin/Adminorder.js';
 import Updateorder from './pages/admin/Updateorder.js';
 import Userlist from './pages/admin/Userlist.js';
+import Paymentsuccess from './pages/Paymentsuccess.js';
 
 
 
@@ -49,7 +49,7 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/shipping' element={<Shipping />} />
           <Route path='/order/confirm' element={<Orderconfirm />} />
-          <Route path='/process/payment' element={<PaymentPage />} />
+          <Route path='paymentsuccess' element={<Paymentsuccess />} />
           <Route path='/admin/dashbord' element={<Dashbord />} />
           <Route path='/admin/product' element={<Adminproduct />} />
           <Route path='/admin/newproduct' element={<Newproduct />} />
