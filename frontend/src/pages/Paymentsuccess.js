@@ -50,7 +50,7 @@ const Paymentsuccess = () => {
                 dispatch(createOrder(order));
                 alert.success('Order placed successfully');
             }
-        }, 10000);
+        }, 2000);
 
         return () => clearTimeout(timer);
     }, [dispatch, alert, referenceNum, order]);
