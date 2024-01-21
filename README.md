@@ -1,4 +1,4 @@
-# Hadiya-mart 
+# wall-mart 
 
 ## full webside
 
@@ -40,7 +40,7 @@ CLOUDINARY_API_SECRET ,
 fill each filed with your info respectively .
 
 Author
-Instagram Click Here @hiren_hadiya_509
+sanjay_zinzala
 
 # full_ecommerce_webside
 # full_ecommerce_webside
