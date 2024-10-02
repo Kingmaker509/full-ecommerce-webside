@@ -3,13 +3,7 @@
 ## full webside
 
 Prerequisite
-Must have basic knowledge of Node, React, Express, MongoDB . I have made tutorial on each technology on YouTube , 
-make sure to check it out. Links are Below respectively
-Node - https://youtu.be/BSO9C8Z-YV8
-React - https://youtu.be/99kgUCIMboY
-Express - https://youtu.be/teipbke8c4A\
-MongoDB - https://youtu.be/AYDP1S5BbTo
-RestApi - https://youtu.be/AhCSfuG9Jxw (optional)
+Must have basic knowledge of Node, React, Express, MongoDB
 Install Dependencies
 
 For Backend - npm i
